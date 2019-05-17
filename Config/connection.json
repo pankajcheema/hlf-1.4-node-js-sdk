@@ -37,7 +37,7 @@
                 "ca.example.com"
             ],
             "adminPrivateKey": {
-                "path": "../m-network/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore/faeca0b643c2943cc5f01cf4744d7642925c773b44c96a544d01d4dbfbacc95a_sk"
+                "path": "../m-network/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore/52a7eb5c4847ba7e88cb94a1119442c1468f6332cb6a7c8ad99983096e10766b_sk"
             },
             "signedCert": {
                 "path": "../m-network/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/signcerts/Admin@org1.example.com-cert.pem"

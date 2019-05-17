@@ -16,7 +16,7 @@ class UserController {
     constructor() {
         console.log("constructer called")
     }
-    async  RegisterUser() {
+    async  RegisterUser(data) {
         try {
 
             // Create a new file system based wallet for managing identities.
@@ -46,12 +46,15 @@ class UserController {
             // Submit the specified transaction.
             // createCar transaction - requires 5 argument, ex: ('createCar', 'CAR12', 'Honda', 'Accord', 'Black', 'Tom')
             // changeCarOwner transaction - requires 2 args , ex: ('changeCarOwner', 'CAR10', 'Dave')
-            var data = { "first_name": "pankaj", "last_name": "cheema", "roll": 23 }
-            await contract.submitTransaction('addUser', '123456', JSON.stringify(data));
+            console.log(data)
+            console.log('here')
+            let result = await contract.submitTransaction('addUser', JSON.stringify(data));
+
             console.log('Transaction has been submitted');
             // Disconnect from the gateway.
             await gateway.disconnect();
-            response.data = data;
+            response.data = result.toString();
+
             response.httpstatus = 200;
             response.message = "Transaction has been submitted";
             return response;
@@ -62,7 +65,7 @@ class UserController {
             return response;
         }
     }
-    async  GetUser() {
+    async  GetUser(id) {
         try {
 
             // Create a new file system based wallet for managing identities.
@@ -92,7 +95,7 @@ class UserController {
             // Evaluate the specified transaction.
             // queryCar transaction - requires 1 argument, ex: ('queryCar', 'CAR4')
             // queryAllCars transaction - requires no arguments, ex: ('queryAllCars')
-            const result = await contract.evaluateTransaction('getUser', '1234');
+            const result = await contract.evaluateTransaction('getUser', id);
             response.data = result.toString();
             response.httpstatus = 200;
             response.message = "Transaction has been evaluated";
