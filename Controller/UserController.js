@@ -43,20 +43,36 @@ class UserController {
             // Get the contract from the network.
             const contract = network.getContract('user');
 
+
             // Submit the specified transaction.
             // createCar transaction - requires 5 argument, ex: ('createCar', 'CAR12', 'Honda', 'Accord', 'Black', 'Tom')
             // changeCarOwner transaction - requires 2 args , ex: ('changeCarOwner', 'CAR10', 'Dave')
             console.log(data)
             console.log('here')
+            const channel = network.getChannel();
+            let eventhuborg = channel.newChannelEventHub('peer0.org1.example.com');
+            console.log(eventhuborg);
+            eventhuborg.connect()
+            let block_reg = eventhuborg.registerBlockEvent((block) => {
+                console.log('Successfully received the block event');
+                console.log(block)
+            }, (error) => {
+                console.log('Failed to receive the block event ::' + error);
+
+            });
+
             let result = await contract.submitTransaction('addUser', JSON.stringify(data));
 
             console.log('Transaction has been submitted');
             // Disconnect from the gateway.
+
             await gateway.disconnect();
+
             response.data = result.toString();
 
             response.httpstatus = 200;
             response.message = "Transaction has been submitted";
+
             return response;
         } catch (error) {
             response.error = error;
