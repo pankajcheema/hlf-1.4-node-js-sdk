@@ -41,7 +41,7 @@ class UserController {
             const network = await gateway.getNetwork('mychannel');
 
             // Get the contract from the network.
-            const contract = network.getContract('user');
+            const contract = network.getContract('nebco');
 
 
             // Submit the specified transaction.
@@ -106,7 +106,7 @@ class UserController {
             const network = await gateway.getNetwork('mychannel');
 
             // Get the contract from the network.
-            const contract = network.getContract('user');
+            const contract = network.getContract('nebco');
 
             // Evaluate the specified transaction.
             // queryCar transaction - requires 1 argument, ex: ('queryCar', 'CAR4')

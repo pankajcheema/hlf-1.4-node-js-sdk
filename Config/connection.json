@@ -37,10 +37,10 @@
                 "ca.example.com"
             ],
             "adminPrivateKey": {
-                "path": "../m-network/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore/52a7eb5c4847ba7e88cb94a1119442c1468f6332cb6a7c8ad99983096e10766b_sk"
+                "path": "../../fabric-samples/single-peer-network/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore/252760a02c58c52b0abf93f6224c42daf3826d341c3c22c1d6ea0d3ee8dd71f5_sk"
             },
             "signedCert": {
-                "path": "../m-network/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/signcerts/Admin@org1.example.com-cert.pem"
+                "path": "../../fabric-samples/single-peer-network/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/signcerts/Admin@org1.example.com-cert.pem"
             }
         }
     },
@@ -52,7 +52,7 @@
                 "grpc.keepalive_timeout_ms": 15
             },
             "tlsCACerts": {
-                "path": "../m-network/crypto-config/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem"
+                "path": "../../fabric-samples/single-peer-network/crypto-config/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem"
             }
         }
     },
@@ -60,7 +60,7 @@
         "peer0.org1.example.com": {
             "url": "grpcs://localhost:7051",
             "tlsCACerts": {
-                "path": "../m-network/crypto-config/peerOrganizations/org1.example.com/tlsca/tlsca.org1.example.com-cert.pem"
+                "path": "../../fabric-samples/single-peer-network/crypto-config/peerOrganizations/org1.example.com/tlsca/tlsca.org1.example.com-cert.pem"
             },
             "grpcOptions": {
                 "ssl-target-name-override": "peer0.org1.example.com",
@@ -76,7 +76,7 @@
                 "verify": false
             },
             "tlsCACerts": {
-                "path": "../m-network/crypto-config/peerOrganizations/org1.example.com/ca/ca.org1.example.com-cert.pem"
+                "path": "../../fabric-samples/single-peer-network/crypto-config/peerOrganizations/org1.example.com/ca/ca.org1.example.com-cert.pem"
             },
             "registrar": [
                 {
